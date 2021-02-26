@@ -8,7 +8,7 @@ version: "2"
       container_name: "rlcfront"
       image: "node:lts-alpine"
       working_dir: /app
-          restart: always
+      restart: always
       volumes:
         - "../../vue:/app"
       command: "npm run serve"

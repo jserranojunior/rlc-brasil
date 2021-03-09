@@ -1,7 +1,7 @@
 <template>
   <div
     id="sidebar"
-    class="left-0 z-10 font-sans w-64 bg-gray-800 border-r border-t border-gray-900 float-left "
+    class="left-0 z-10 font-sans w-64 bg-gray-800 border-r border-t border-gray-900 float-left"
     :style="{ minHeight: sidebarHeight + 'px' }"
   >
     <nav class="">
@@ -77,15 +77,15 @@
 </template>
 
 <script>
-  export default {
-    name: "Sidebar",
-    data() {
-      return {
-        sidebarHeight: 0,
-      };
-    },
-    beforeMount() {
-      this.sidebarHeight = window.innerHeight - 60;
-    },
-  };
+export default {
+  name: "Sidebar",
+  data() {
+    return {
+      sidebarHeight: 0
+    };
+  },
+  beforeMount() {
+    this.sidebarHeight = window.innerHeight - 60;
+  }
+};
 </script>

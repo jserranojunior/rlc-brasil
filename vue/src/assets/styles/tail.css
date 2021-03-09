@@ -15,11 +15,11 @@
 }
 .form-tail {
   
-  @apply  border border-gray-800 rounded-lg py-2 px-4 block w-full appearance-none leading-normal text-gray-200 bg-gray-900 cursor-pointer  shadow
+  @apply  border border-gray-400 rounded-lg py-2 px-4 block w-full appearance-none leading-normal text-gray-100 bg-gray-200 cursor-pointer  shadow
 }
 
 .form-tail:focus {
-  @apply cursor-text outline-none bg-gray-700 ;
+  @apply cursor-text outline-none bg-gray-300 ;
 }
 .btn-primary-tail-rounded {
   @apply cursor-pointer text-white text-center font-semibold py-2 px-4 border  bg-blue-500  rounded-full mr-2;
@@ -42,5 +42,14 @@
 .categoria-header{
   @apply text-white font-bold
 }
+.btn-menu{
+  @apply  px-4 py-2  text-sm font-semibold rounded-lg  mx-1  text-gray-100 
+
+}
+.btn-menu:hover{
+  @apply  bg-pink-600;
+}
+
+
 }
 

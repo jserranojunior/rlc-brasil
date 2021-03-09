@@ -1,6 +1,9 @@
 <template>
-  <div class="p-4 bg-gray-900">
-    <div class="flex justify-center">
+  <div class="p-4">
+    <div class="flex flex-wrap justify-center">
+      <div class="w-full m-6 text-center">
+        <h3 class="font-bold text-2xl">AO VIVO</h3>
+      </div>
       <div
         class="w-full sm:w-full md:w-2/3 lg:w-2/3 rounded-sm shadow p-2 bg-gray-800"
       >
@@ -16,6 +19,8 @@
         ></iframe>
       </div>
     </div>
+
+    <postagens></postagens>
     <div class="flex justify-center">
       <div class="w-2/3 mt-2">
         <iframe
@@ -31,6 +36,7 @@
 </template>
 
 <script>
+import postagens from "@/modules/blog/components/postagens";
 import { onMounted, ref, watch } from "vue";
 export default {
   setup() {
@@ -73,7 +79,7 @@ export default {
       videoHeigth.value = setHeight();
     });
     const msg = "Seja bem vindo a " + process.env.VUE_APP_NAME;
-    return { msg, videoHeigth };
+    return { msg, videoHeigth, postagens };
   }
 };
 </script>

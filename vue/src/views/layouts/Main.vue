@@ -2,7 +2,7 @@
   <div class="bg-gray-100">
     <Navbar></Navbar>
     <!-- <Sidebar></Sidebar> -->
-    <div class="bg-gray-300 h-screen">
+    <div class="h-screen">
       <router-view />
     </div>
   </div>

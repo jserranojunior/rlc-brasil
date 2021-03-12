@@ -1,13 +1,25 @@
 <template>
   <div>
-    <div class="w-full h-32 bg-black">
-      <div class="flex justify-center items-center p-4">
-        <div class="w-1/2"><span class="text-white">Logo</span></div>
+    <!-- <img :src="imgHeader" alt="" /> -->
+    <div class="w-full">
+      <div
+        class="flex justify-center items-center p-4 h-32"
+        :style="'background-image: url(' + imgHeader + ')'"
+      >
+        <div class="w-1/2">
+          <img :src="imgLogo" alt="Logo" />
+        </div>
         <div class="w-1-4">
           <div class="items-center my-auto">
-            <span class="text-white"
-              ><input type="text" class="form-tail"
-            /></span>
+            <span class="text-dark">
+              <div class="input-wrapper">
+                <input type="text" class="form-tail input-wrapper" />
+                <label
+                  for="stuff"
+                  class="fas fa-search input-icon pl-2"
+                ></label>
+              </div>
+            </span>
           </div>
         </div>
       </div>
@@ -32,18 +44,34 @@
 
 <script>
 import { useLayouts } from "./use";
-import { inject } from "vue";
+import { inject, reactive, toRefs } from "vue";
 
 export default {
   setup() {
+    const state = reactive({
+      imgHeader: require("@/assets/imgs/header-img.jpg"),
+      imgLogo: require("@/assets/imgs/logo.png")
+    });
     const useAuth = inject("auth");
     const appName = process.env.VUE_APP_NAME;
+
+    const bgHeader = `background-image: url(${state.imgHeader})" `;
 
     const { closeSidebar, open, itensMenu } = useLayouts();
 
     const { Logout, auth, fields } = useAuth;
 
-    return { Logout, auth, closeSidebar, open, fields, appName, itensMenu };
+    return {
+      ...toRefs(state),
+      Logout,
+      auth,
+      closeSidebar,
+      open,
+      fields,
+      appName,
+      itensMenu,
+      bgHeader
+    };
   }
 };
 </script>
@@ -56,4 +84,21 @@ export default {
     rgba(121, 42, 134, 1) 100%
   );
 }
+
+.input-icon {
+  position: absolute;
+  left: 3px;
+  top: calc(
+    50% - 0.5em
+  ); /* Keep icon in center of input, regardless of the input height */
+}
+input {
+  padding-left: 17px;
+}
+.input-wrapper {
+  position: relative;
+}
 </style>
+
+
+

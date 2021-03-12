@@ -3,10 +3,16 @@
     <h2 class="text-gray-500 font-bold text-3xl mt-16">MAIS NOTÍCIAS</h2>
     <div class="flex">
       <div class="w-1/3 p-6" v-for="post in posts" :key="post.id">
-        <img :src="post.thumbnail" alt="" />
-        <h3 class="text-gray-500 font-bold text-xl mt-3">
-          {{ post.title }}
-        </h3>
+        <figure>
+          <img
+            class="img-thumbnail"
+            :src="post.thumbnail"
+            alt="Uma imagem impressionante"
+          />
+          <figcaption class="text-gray-500 font-bold text-xl mt-3">
+            {{ post.title }}
+          </figcaption>
+        </figure>
       </div>
     </div>
   </div>
@@ -43,3 +49,8 @@ export default {
 };
 </script>
 
+<style>
+.img-thumbnail {
+  width: 100%;
+}
+</style>
